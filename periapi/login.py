@@ -11,7 +11,7 @@ import json
 import oauth2 as oauth
 import requests
 
-from path import path
+from path import Path as path
 from .logging import logging
 
 RTOKEN_URL = 'https://api.twitter.com/oauth/request_token?oauth_callback=oob'
