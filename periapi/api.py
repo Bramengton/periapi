@@ -86,6 +86,17 @@ class PeriAPI:
             {"user_id": user_id}
             )
 
+    def get_user(self, user_id):
+        """Users have broadcasts, this lists them"""
+        try:
+            response = self._post(
+                'https://api.periscope.tv/api/v2/user',
+                {"user_id": user_id}
+                )
+        except IOError as er:
+            response = str(er)
+        return response
+
     @property
     def notifications(self):
         """Current notifications"""
