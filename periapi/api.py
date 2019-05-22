@@ -86,6 +86,17 @@ class PeriAPI:
             {"user_id": user_id}
             )
 
+    def get_following(self, user_id):
+        """Get a list of following users"""
+        try:
+            response = self._post(
+                'https://api.periscope.tv/api/v2/following',
+                {"user_id": user_id}
+                )
+        except IOError as er:
+            response = []
+        return response
+
     def get_user(self, user_id):
         """Users have broadcasts, this lists them"""
         try:
