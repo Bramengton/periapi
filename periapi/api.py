@@ -97,6 +97,17 @@ class PeriAPI:
             response = []
         return response
 
+    def get_followers(self, user_id):
+        """Get a list of followers"""
+        try:
+            response = self._post(
+                'https://api.periscope.tv/api/v2/followers',
+                {"user_id": user_id}
+                )
+        except IOError as er:
+            response = []
+        return response
+
     def get_user(self, user_id):
         """Users have broadcasts, this lists them"""
         try:
@@ -118,10 +129,12 @@ class PeriAPI:
     @property
     def following(self):
         """Current people you're following"""
-        return self._post(
-            'https://api.periscope.tv/api/v2/following',
-            {"user_id": self.pubid}
-            )
+        return self.get_following(self.pubid)
+
+    @property
+    def followers(self):
+        """Current you're followers"""
+        return self.get_followers(self.pubid)
 
     def get_access(self, broadcast_id):
         """Gets broadcast info (like rtmps url) for private broadcasts"""
