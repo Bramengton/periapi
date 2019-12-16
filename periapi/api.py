@@ -29,8 +29,8 @@ def bool_response(fun):
 class PeriAPI:
     """Implements some of the periscope.tv API"""
 
-    def __init__(self):
-        self.session = LoginSession()
+    def __init__(self, peri_config_file="~/.peri.conf"):
+        self.session = LoginSession(peri_config_file=peri_config_file)
         self._pubid = self.session.config.get("pubid")
 
     def _post(self, url, payload=None):

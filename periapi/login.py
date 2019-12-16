@@ -27,11 +27,9 @@ PERI_VALIDATE_URL = 'https://api.periscope.tv/api/v2/validateUsername'
 class PeriConfig(dict):
     """Persistent peri config dict"""
 
-    def __init__(self, *args, **kw):
+    def __init__(self, peri_config_file, *args, **kw):
         super().__init__(*args, **kw)
-        self.file = path(".peri.conf")
-        if not self.file.isfile():
-            self.file = path("~/.peri.conf").expand()
+        self.file = path(peri_config_file).expand()
         if self.file.isfile():
             self.load()
 
@@ -61,11 +59,11 @@ class PeriConfig(dict):
 class LoginSession(requests.Session):
     """Provides an authenticated requests.Session"""
 
-    def __init__(self, *args, **kw):
+    def __init__(self, peri_config_file, *args, **kw):
         super().__init__(*args, **kw)
 
         # Periscope API keys
-        config = self.config = PeriConfig()
+        config = self.config = PeriConfig(peri_config_file=peri_config_file)
         self.headers.update({
             'User-Agent': 'Periscope/3313 (iPhone; iOS 7.1.1; Scale/2.00)',
             "Accept-Encoding": "gzip, deflate",
