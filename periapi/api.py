@@ -77,6 +77,22 @@ class PeriAPI:
         return self._post(
             'https://api.periscope.tv/api/v2/unfollow',
             {"user_id": user_id}
+            )\
+
+    @bool_response
+    def block(self, user_id):
+        """Block a user"""
+        return self._post(
+            'https://api.periscope.tv/api/v2/block/add',
+            {"to": user_id}
+            )
+
+    @bool_response
+    def unblock(self, user_id):
+        """Unblock a user"""
+        return self._post(
+            'https://api.periscope.tv/api/v2/block/remove',
+            {"to": user_id}
             )
 
     def get_user_broadcast_history(self, user_id):
@@ -92,6 +108,16 @@ class PeriAPI:
             response = self._post(
                 'https://api.periscope.tv/api/v2/following',
                 {"user_id": user_id}
+                )
+        except IOError as er:
+            response = []
+        return response
+
+    def get_blocked(self, user_id):
+        """Get a list of blocked users"""
+        try:
+            response = self._post(
+                'https://api.periscope.tv/api/v2/block/users'
                 )
         except IOError as er:
             response = []
@@ -130,6 +156,11 @@ class PeriAPI:
     def following(self):
         """Current people you're following"""
         return self.get_following(self.pubid)
+
+    @property
+    def blocked(self):
+        """Current people you've blocked"""
+        return self.get_blocked()
 
     @property
     def followers(self):
