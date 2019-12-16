@@ -113,7 +113,7 @@ class PeriAPI:
             response = []
         return response
 
-    def get_blocked(self, user_id):
+    def get_blocked(self):
         """Get a list of blocked users"""
         try:
             response = self._post(
