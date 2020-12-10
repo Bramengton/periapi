@@ -1,0 +1,11 @@
+Please input the Periscope consumer key: 9I4iINIyd0R01qEPEwT9IC6RE
+Please input the Periscope consumer secret: BDP2fLhkfHdQ3TynI1mzOQyJAODtLCTPv2JHdcNSiYM2rUIsyG
+
+Please input the Periscope consumer key: 7DIGBXQCmgR28M8AR9Q
+Please input the Periscope consumer secret: Cc2dQkA4TdMXoeuB9sedA1uxGB1zrrNmHjF3jfbhSo
+
+Please input the Periscope consumer key: IQINRrpXLgCCESnyKVgrwf3j6
+Please input the Periscope consumer secret: mtEBN9kjWcnNUnfDjxW00AOOIUUUXRvaksbyW0wpGz3OJuRHnj
+
+Please input the Periscope consumer key: uAJ3U5tDhETqV4u41pxdpcO5p
+Please input the Periscope consumer secret: GOueDcFBbOEewsyQRgUSpaUolN5ZTvUXtYTso8yxueTi8bswdL
