@@ -38,18 +38,6 @@ Usage
 
 1. Run :code:`periapi` in a console to execute a  simple command line interface.
 
-Please input the Periscope consumer key: 9I4iINIyd0R01qEPEwT9IC6RE
-Please input the Periscope consumer secret: BDP2fLhkfHdQ3TynI1mzOQyJAODtLCTPv2JHdcNSiYM2rUIsyG
-
-Please input the Periscope consumer key: 7DIGBXQCmgR28M8AR9Q
-Please input the Periscope consumer secret: Cc2dQkA4TdMXoeuB9sedA1uxGB1zrrNmHjF3jfbhSo
-
-Please input the Periscope consumer key: IQINRrpXLgCCESnyKVgrwf3j6
-Please input the Periscope consumer secret: mtEBN9kjWcnNUnfDjxW00AOOIUUUXRvaksbyW0wpGz3OJuRHnj
-
-Please input the Periscope consumer key: uAJ3U5tDhETqV4u41pxdpcO5p
-Please input the Periscope consumer secret: GOueDcFBbOEewsyQRgUSpaUolN5ZTvUXtYTso8yxueTi8bswdL
-
 2. On first run, you will need to execute a PIN-based authentication with Twitter. The script will give you a twitter.com url to visit and once you are logged in, Twitter will give you a temporary PIN. Enter that number into the python console and press enter. 
 3. Your Periscope (not Twitter) credentials will be saved (see the NOTE at the beginning of this readme) so step 2 will not need to be repeated unless your credentials get revoked.
 4. You will now be logged into the periscope API and can do a few things. More to come.
